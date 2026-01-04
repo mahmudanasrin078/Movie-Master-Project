@@ -25,7 +25,7 @@ const TopRatedMovie = () => {
   }
   //console.log(data);
   return (
-    <div className="bg-gray-700">
+    <div className="bg-gray-700 px-5">
       <div className="text-2xl text-white font-bold p-5">
         Top Rated <span className="text-red-500">Movies </span>
       </div>

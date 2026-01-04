@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 
-import Profile from "../pages/Profile";
+import Profile from "../pages/dashboard/Profile";
 
 import LoadingSpinner from "../components/LoadingSpiner";
 
@@ -14,14 +14,16 @@ import About from "../pages/About";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ForgotPasswordPage from "../pages/ForgotPasswordPage";
 import AllMovies from "../pages/AllMovies";
-import MyCollection from "../pages/MyCollection";
-import AddMovie from "../pages/AddMovie";
-import UpdateMovie from "../pages/UpdateMovie";
+import MyCollection from "../pages/Dashboard/MyCollection";
+import AddMovie from "../pages/Dashboard/AddMovie";
+import UpdateMovie from "../pages/Dashboard/UpdateMovie";
 import MovieDetails from "../pages/MovieDetails";
 import MyWatchList from "../pages/MyWatchList";
 import TopRatedMovie from "../components/TopRatedMovie";
 import Filter from "../components/FilterMovies";
 import FilterMovies from "../components/FilterMovies";
+import DashboardLayout from "../layouts/DashboardLayout";
+import DashboardOverview from "../pages/Dashboard/DashboardOverview";
 
 export const router = createBrowserRouter([
   {
@@ -36,14 +38,7 @@ export const router = createBrowserRouter([
         loader: () =>
           fetch("https://assignment-10-movie-server.vercel.app/latest-movies"),
       },
-      {
-        path: "/profile",
-        element: (
-          <PrivateRoute>
-            <Profile></Profile>
-          </PrivateRoute>
-        ),
-      },
+
       {
         path: "/movie-details/:id",
         element: <MovieDetails></MovieDetails>,
@@ -52,28 +47,7 @@ export const router = createBrowserRouter([
             `https://assignment-10-movie-server.vercel.app/movies/${params.id}`
           ),
       },
-      {
-        path: "/add-movie",
-        element: (
-          <PrivateRoute>
-            {" "}
-            <AddMovie></AddMovie>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/update-movie/:id",
-        element: (
-          <PrivateRoute>
-            {" "}
-            <UpdateMovie></UpdateMovie>
-          </PrivateRoute>
-        ),
-        loader: ({ params }) =>
-          fetch(
-            `https://assignment-10-movie-server.vercel.app/movies/${params.id}`
-          ),
-      },
+      
 
       {
         path: "/login-pages",
@@ -103,14 +77,7 @@ export const router = createBrowserRouter([
         loader: () =>
           fetch("https://assignment-10-movie-server.vercel.app/movies"),
       },
-      {
-        path: "/my-collection",
-        element: (
-          <PrivateRoute>
-            <MyCollection></MyCollection>,
-          </PrivateRoute>
-        ),
-      },
+
       {
         path: "/my-watchList",
         element: (
@@ -127,6 +94,73 @@ export const router = createBrowserRouter([
         path: "/forgot-password-page",
         element: <ForgotPasswordPage></ForgotPasswordPage>,
       },
+    ],
+  },
+
+  //   dashboard layouts
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+
+    {
+      index: true,
+      element: <DashboardOverview />,
+    },
+
+    
+    {
+      path: "overview",
+      element: <DashboardOverview />,
+    },
+      {
+        path: "profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
+      },
+
+      {
+        path: "my-collection",
+        element: (
+          <PrivateRoute>
+            <MyCollection></MyCollection>,
+          </PrivateRoute>
+        ),
+      },
+
+      {
+        path: "add-movie",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <AddMovie></AddMovie>
+          </PrivateRoute>
+        ),
+      },
+     
+
+
+ {
+        path: "update-movie/:id",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <UpdateMovie></UpdateMovie>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://assignment-10-movie-server.vercel.app/movies/${params.id}`
+          ),
+      },
+
     ],
   },
 

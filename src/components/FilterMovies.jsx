@@ -209,7 +209,7 @@ const FilterMovies = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 bg-gray-900 py-8">
+    <div className="mx-auto px-4 bg-gray-900 py-8">
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-white">
         Filter <span className="text-red-500">Movies</span>
       </h2>

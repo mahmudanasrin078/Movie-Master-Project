@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 
 const Profile = () => {
   const { user, setUser } = useContext(AuthContext);

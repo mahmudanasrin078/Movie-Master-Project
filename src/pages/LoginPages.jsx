@@ -98,7 +98,9 @@ const LoginPages = () => {
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col  ">
           <div className="text-center ">
-            <h1 className="text-3xl font-bold my-4">Login your account</h1>
+            <h1 className="text-3xl font-bold my-4">
+              Login <span className="text-red-400">Please</span>
+            </h1>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleLogin} className="card-body">
@@ -168,7 +170,10 @@ const LoginPages = () => {
 
                 {/* {error && <p className="text-red-500 text-xl">{error}</p>} */}
 
-                <button type="submit" className="btn btn-neutral mt-4">
+                <button
+                  type="submit"
+                  className="btn bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 mt-4"
+                >
                   Login
                 </button>
                 <p className="font-semibold text-center mt-2">

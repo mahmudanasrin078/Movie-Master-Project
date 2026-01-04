@@ -57,7 +57,7 @@ const MovieDetails = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white py-10 px-5">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white -my-5 py-10 px-5">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 bg-gray-900/60 p-8 rounded-xl shadow-xl border border-gray-700">
         {/* Movie Poster */}
         <div className="w-full md:w-1/3">
@@ -116,7 +116,7 @@ const MovieDetails = () => {
           {user && (
             <div className="flex flex-wrap gap-4 mt-6">
               <Link
-                to={`/update-movie/${movie._id}`}
+                to={`/dashboard/update-movie/${movie._id}`}
                 className={`btn btn-red text-white font-semibold px-6 py-2 bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500  rounded-lg shadow-md transition ${
                   user?.email !== movie.addedBy
                     ? "opacity-50 cursor-not-allowed"

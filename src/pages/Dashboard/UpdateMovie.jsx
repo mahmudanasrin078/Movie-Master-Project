@@ -62,12 +62,12 @@ const UpdateMovie = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
+          title: "Updated Movie!",
+          text: "Your movie has been Updated.",
           icon: "success",
         });
       }
@@ -75,7 +75,7 @@ const UpdateMovie = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral  flex justify-center items-start py-12">
+    <div className="min-h-screen bg-gray-700  flex justify-center items-start -my-5 py-12">
       <form
         onSubmit={handleSubmit}
         className="card bg-base-300 w-full max-w-md shadow-xl p-6"

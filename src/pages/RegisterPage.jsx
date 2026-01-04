@@ -136,7 +136,7 @@ const RegisterPage = () => {
           <div className="hero-content flex-col  ">
             <div className="text-center ">
               <h1 className="text-3xl font-bold my-4 ">
-                Register your account
+                Register your <span className="text-red-400">account</span>
               </h1>
             </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -206,7 +206,10 @@ const RegisterPage = () => {
                     </button>
                   </div>
 
-                  <button type="submit" className="btn btn-neutral mt-4">
+                  <button
+                    type="submit"
+                    className="btn bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 mt-4"
+                  >
                     Register
                   </button>
                   <p className="font-semibold text-center mt-2">

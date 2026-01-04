@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../context/AuthContext";
-import LoadingSpinner from "../components/LoadingSpiner";
-import { MovieCard } from "../components/MovieCard";
+import { AuthContext } from "../../context/AuthContext";
+import LoadingSpinner from "../../components/LoadingSpiner";
+import { MovieCard } from "../../components/MovieCard";
 
 const MyCollection = () => {
   const { user } = useContext(AuthContext);
@@ -26,7 +26,7 @@ const MyCollection = () => {
   }
 
   return (
-    <div className="bg-gray-800 py-12 -mt-5 -mb-11">
+    <div className="bg-gray-800 py-12 -mt-5 -mb-11 p-5">
       <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
         {myCollection.map((movie) => (
           <MovieCard key={movie._id} movie={movie}></MovieCard>

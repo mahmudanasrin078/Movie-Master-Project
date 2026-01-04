@@ -1,7 +1,9 @@
 
 live url: 
 
-login info:
+login info: 
+email:  user@gmail.com
+password: 123456Az
 
 
 

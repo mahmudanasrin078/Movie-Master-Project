@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 //import logo from "../assets/logo.png";
 const Footer = () => {
   return (
@@ -8,10 +9,16 @@ const Footer = () => {
           <aside className="w-[400px]">
             {/* <img className="w-[40px]" src={logo} alt="" /> */}
             <h2 className=" text-[25px] md:text-[30px]  lg:text-[37px] font-bold ">
-              <span className=" bg-clip-text  "> Movie Master</span>{" "}
+              Movie
+              <span className=" text-red-400 bg-clip-text  "> Master</span>{" "}
             </h2>
-            <p className="md:text-[16px] font-normal text-[#627382] mt-2  ">
-              Movie Master is a modern web application where users can explore information about various movies. It features popular, newly released, and top-rated films with options to filter by genre, view detailed information, and search easily. The app is fully responsive and built using React, TailwindCSS, and Express.js, providing a smooth and dynamic movie discovery experience.
+            <p className="md:text-[16px] font-normal text-[rgb(98,115,130)] mt-2 p-2 w-[300px]  md:w-[300px] lg:w-[400px]">
+              Movie Master is a modern web application where users can explore
+              information about various movies. It features popular, newly
+              released, and top-rated films with options to filter by genre,
+              view detailed information, and search easily. The app is fully
+              responsive and built using React, TailwindCSS, and Express.js,
+              providing a smooth and dynamic movie discovery experience.
             </p>
           </aside>
           <nav>
@@ -23,15 +30,28 @@ const Footer = () => {
           </nav>
           <nav>
             <h6 className="footer-title">Company</h6>
-            <a className="link link-hover">About Us </a>
-            <a className="link link-hover">Contact Us</a>
-            <a className="link link-hover">Profile</a>
-            <a className="link link-hover">All Movies</a>
+            <Link to="/about" className="link link-hover">
+              About Us
+            </Link>
+            <Link to="/" className="link link-hover">
+              Contact Us
+            </Link>
+            <Link to="dashboard/profile" className="link link-hover">
+              Profile
+            </Link>
+            <Link to="/" className="link link-hover">
+              All Movies
+            </Link>
           </nav>
           <nav>
             <h6 className="footer-title">Social</h6>
             <div className="grid grid-flow-col gap-4">
-              <a>
+              <a
+                href="https://www.linkedin.com/in/mahmudanasrin/"
+                target="_blank"
+                rel="noopener noreferrer"
+                
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -39,10 +59,15 @@ const Footer = () => {
                   viewBox="0 0 24 24"
                   className="fill-current"
                 >
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                  <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm8 0h4.8v2.2h.07c.67-1.27 2.31-2.6 4.76-2.6 5.09 0 6.03 3.35 6.03 7.7V24h-5v-7.6c0-1.81-.03-4.14-2.52-4.14-2.53 0-2.92 1.97-2.92 4v7.74H8V8z" />
                 </svg>
               </a>
-              <a>
+
+              <a
+                href="https://github.com/mahmudanasrin078"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -50,10 +75,15 @@ const Footer = () => {
                   viewBox="0 0 24 24"
                   className="fill-current"
                 >
-                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                  <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.02c-3.2.7-3.87-1.37-3.87-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.07.78 2.16v3.2c0 .3.21.65.79.54A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
                 </svg>
               </a>
-              <a>
+
+              <a
+                href="https://www.facebook.com/profile.php?id=61567836807864"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

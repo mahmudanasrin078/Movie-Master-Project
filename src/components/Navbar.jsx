@@ -1,6 +1,3 @@
-
-
-
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/AuthContext";
@@ -36,7 +33,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="shadow-md bg-base-100 sticky top-0 z-50 border-b border-gray-300 dark:border-gray-700">
+    <div className="shadow-md bg-base-100 fixed top-0 left-0 w-full z-50 border-b border-gray-300 dark:border-gray-700">
       <div className="flex justify-between items-center w-11/12 mx-auto py-3">
         {/* Left Side*/}
         <div className="flex items-center gap-3">
@@ -74,6 +71,16 @@ const Navbar = () => {
             }
           >
             All Movies
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive
+                ? "text-pink-500 font-semibold"
+                : "hover:text-red-500 font-semibold transition"
+            }
+          >
+            About Us
           </NavLink>
           {user && (
             <>
@@ -153,11 +160,14 @@ const Navbar = () => {
                   {user?.email}
                 </p>
                 <li className="mt-3">
-                  <Link to={"/profile"}>Profile</Link>
+                  <Link to={"dashboard/profile"}>Profile</Link>
+                </li>
+                <li className="my-3 ">
+                  <Link to={"/dashboard"}>Dashboard</Link>
                 </li>
                 <button
                   onClick={handleLogout}
-                  className="btn bg-primary text-white w-full"
+                  className="btn bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500text-white w-full"
                 >
                   Logout
                 </button>
@@ -215,6 +225,18 @@ const Navbar = () => {
           >
             All Movies
           </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive
+                ? "text-pink-500 font-semibold"
+                : "hover:text-red-500 font-semibold transition"
+            }
+          >
+            About Us
+          </NavLink>
+
           {user && (
             <>
               <NavLink
