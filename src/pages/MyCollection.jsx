@@ -1,0 +1,39 @@
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
+import LoadingSpinner from "../components/LoadingSpiner";
+import { MovieCard } from "../components/MovieCard";
+
+const MyCollection = () => {
+  const { user } = useContext(AuthContext);
+  const [myCollection, setMyCollection] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(
+      `https://assignment-10-movie-server.vercel.app/my-collection?email=${user.email}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        //console.log(data);
+        setMyCollection(data);
+        setLoading(false);
+      });
+  }, [user]);
+
+  if (loading) {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
+
+  return (
+    <div className="bg-gray-800 py-12 -mt-5 -mb-11">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {myCollection.map((movie) => (
+          <MovieCard key={movie._id} movie={movie}></MovieCard>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MyCollection;
