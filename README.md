@@ -1,4 +1,16 @@
 
+Live website URL: https://assignment-10-movie-master.web.app
+
+GitHub repository frontend : https://github.com/mahmudanasrin078/Movie-Master-Project
+
+GitHub repository backend: https://github.com/mahmudanasrin078/assignment-10-movie-master-server
+
+Demo credentials
+
+User email: user@gmail.com
+
+password: 123456Az
+
 live url: 
 
 login info: 
